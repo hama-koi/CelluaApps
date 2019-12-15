@@ -1,0 +1,7 @@
+#header p {
+	background-color: #47B39D; /*ヘッダーの背景色*/
+ color: black; /*ヘッダーの文字の色*/
+ font-size: 40px;
+ font-style: unset;
+}
+
