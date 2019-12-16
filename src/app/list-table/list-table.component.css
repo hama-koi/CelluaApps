@@ -1,0 +1,34 @@
+#contents {
+ width: 500px; /*親ボックスの幅*/
+ overflow: hidden
+}
+
+#contents ul {
+ width: 510px; /*右マージン含む子ボックス合計幅*/
+ margin-right: -10px; /*親ボックスからのはみ出しぶんをずらしとく*/
+ }
+  
+ #contents ul li {
+ width: 160px;
+ float: left;
+ margin-right: 10px;
+ }
+
+
+
+ #content {
+  width: 500px; 
+  overflow: hidden
+ }
+ 
+ #content ul {
+  width: 510px; 
+  margin-right: -10px; 
+  }
+   
+  #content ul li {
+  width: 160px;
+  float: left;
+  margin-right: 10px;
+  }
+ 

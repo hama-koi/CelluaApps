@@ -7,8 +7,9 @@ export class CommonService {
   public tenCode: string;
   public pass: string;
 
-  constructor() { 
-    this.tenCode = '0000';
-    this.pass = '0000';
+  constructor() {
   }
+
+
+
 }

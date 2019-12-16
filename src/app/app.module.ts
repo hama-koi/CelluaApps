@@ -14,13 +14,24 @@ import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './login/login.component';
 
 import { CommonService } from './service/common.service';
+import { EmployeesComponent } from './employees/employees.component';
+import { ListTableComponent } from './list-table/list-table.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
+import { HttpClientModule } from '@angular/common/http';
 
-
+const ROUTE_TABLE: Routes = [
+  {path: '', component: LoginComponent},
+  {path: 'list', component: ListTableComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    EmployeesComponent,
+    ListTableComponent,
+    HeaderComponent
 
   ],
   imports: [
@@ -34,6 +45,8 @@ import { CommonService } from './service/common.service';
     MatFormFieldModule,
     MatIconModule,
     FormsModule,
+    RouterModule.forRoot(ROUTE_TABLE),
+    HttpClientModule,
   ],
   providers: [CommonService],
   bootstrap: [AppComponent]
