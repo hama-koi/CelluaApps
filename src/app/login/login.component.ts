@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     }
   }
   private chckTencd(code: string, pass: string): boolean  {
-    if(code !== '0000' && pass !== '0000') {
+    if(code !== '0000'  ||  pass !== '0000') {
       return false;
     }
     return true;

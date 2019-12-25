@@ -11,5 +11,7 @@ export class ListTableComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onClickSift() {
+    console.log('シフトボタンが押下されました');
+}
 }
