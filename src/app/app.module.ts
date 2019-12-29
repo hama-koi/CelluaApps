@@ -13,16 +13,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './login/login.component';
 
-import { CommonService } from './service/common.service';
 import { EmployeesComponent } from './employees/employees.component';
 import { ListTableComponent } from './list-table/list-table.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClientService } from './service/common.service';
+import { ItiranComponent } from './itiran/itiran.component';
 
 const ROUTE_TABLE: Routes = [
   {path: '', component: LoginComponent},
-  {path: 'list', component: ListTableComponent}
+  {path: 'list', component: ListTableComponent},
+  {path: 'itiran', component: ItiranComponent},
 ];
 
 @NgModule({
@@ -31,7 +33,8 @@ const ROUTE_TABLE: Routes = [
     LoginComponent,
     EmployeesComponent,
     ListTableComponent,
-    HeaderComponent
+    HeaderComponent,
+    ItiranComponent
 
   ],
   imports: [
@@ -48,7 +51,7 @@ const ROUTE_TABLE: Routes = [
     RouterModule.forRoot(ROUTE_TABLE),
     HttpClientModule,
   ],
-  providers: [CommonService],
+  providers: [HttpClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
