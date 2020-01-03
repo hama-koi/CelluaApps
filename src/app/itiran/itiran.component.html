@@ -1,16 +1,65 @@
-<!-- 片方向データバインドでバックエンドから取得した情報を表示する -->
+<!-- 片方向データバインドでバックエンドから取得した情報を表示する
 <table class="table" border="2">
  <p>従業員一覧</p>
  <tr>
-   <th id="th-id">first_name</th>
-   <th id="th-message">last_name</th>
+   <th id="id">ID</th>
+   <th id="last_name">last_name</th>
+   <th id="first_name">first_name</th>
+   <th id="age">age</th>
+   <th id="sex">sex</th>
+   <th id="adress">adress</th>
  </tr>
- <!--インデックス番号（index）に変数iでアクセスできるように-->
+ インデックス番号（index）に変数iでアクセスできるように
  <tr *ngFor="let messageInfo of messageInfoList; index as i">
-   <td>{{messageInfo.first_name}}</td>
+  <td>{{messageInfo.id}}</td>
+  <td>{{messageInfo.first_name}}</td>
    <td>{{messageInfo.last_name}}</td>
+   <td>{{messageInfo.age}}</td>
+   <td>{{messageInfo.sex}}</td>
+   <td>{{messageInfo.adress}}</td>
+  
  </tr>
+</table> -->
+<table mat-table [dataSource]="messageInfoList">
+ <!-- Position Column -->
+ <ng-container matColumnDef="No">
+  <th mat-header-cell *matHeaderCellDef> No</th>
+  <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+</ng-container>
+
+<!-- Name Column -->
+<ng-container matColumnDef="first_name">
+  <th mat-header-cell *matHeaderCellDef> first_name </th>
+  <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+</ng-container>
+<!-- Name Column -->
+<ng-container matColumnDef="last_name">
+  <th mat-header-cell *matHeaderCellDef> last_name </th>
+  <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+</ng-container>
+<!-- Weight Column -->
+<ng-container matColumnDef="age">
+  <th mat-header-cell *matHeaderCellDef> age </th>
+  <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+</ng-container>
+
+<!-- Symbol Column -->
+<ng-container matColumnDef="sex">
+  <th mat-header-cell *matHeaderCellDef> sex </th>
+  <td mat-cell *matCellDef="let element"> {{element.sex}} </td>
+</ng-container>
+<!-- Symbol Column -->
+<ng-container matColumnDef="adress">
+  <th mat-header-cell *matHeaderCellDef> adress </th>
+  <td mat-cell *matCellDef="let element"> {{element.adress}} </td>
+</ng-container>
+
+<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
 </table>
+<a routerLink='/list'>back to  page</a>
 
 <!-- <form #formCheck="ngForm" class="formCheck">
  <input type="text" id="form-id" class="input-text" name="message-id" [(ngModel)]="messageId">

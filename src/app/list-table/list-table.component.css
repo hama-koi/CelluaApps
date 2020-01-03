@@ -1,34 +1,22 @@
 #contents {
- width: 500px; /*親ボックスの幅*/
- overflow: hidden
+	width: 90%;
+	min-width: 640px;
+	margin: 0 auto;
+	background-color: #ffffff;
+	display: flex ;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -o-box;
+	display: -ms-box;
+	box-pack: justify;
+	-moz-box-pack: justify;
+	-webkit-box-pack: justify;
+	-o-box-pack: justify;
+	-ms-box-pack: justify;	
+} 
+.elements {
+	width: 200px;
+	height: 200px;
+	background-color: #ffffff;
+	display: block;
 }
-
-#contents ul {
- width: 510px; /*右マージン含む子ボックス合計幅*/
- margin-right: -10px; /*親ボックスからのはみ出しぶんをずらしとく*/
- }
-  
- #contents ul li {
- width: 160px;
- float: left;
- margin-right: 10px;
- }
-
-
-
- #content {
-  width: 500px; 
-  overflow: hidden
- }
- 
- #content ul {
-  width: 510px; 
-  margin-right: -10px; 
-  }
-   
-  #content ul li {
-  width: 160px;
-  float: left;
-  margin-right: 10px;
-  }
- 

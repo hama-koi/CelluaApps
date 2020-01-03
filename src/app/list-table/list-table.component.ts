@@ -11,11 +11,16 @@ export class ListTableComponent implements OnInit {
 
   ngOnInit() {
   }
-  onClickSift() {
+  onClickShift() {
     console.log('シフトボタンが押下されました');
+    this.router.navigate(['/shift']);
 }
   onClickItiran(){
     console.log('従業員一覧が押下されました ');
     this.router.navigate(['/itiran']);
+  }
+  onClickEmpUpt() {
+    console.log('従業員登録が押下されました');
+    this.router.navigate(['/empRegsist']);
   }
 }

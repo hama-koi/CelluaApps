@@ -5,6 +5,10 @@ const http = require('http');
 
 // api.js(サーバサイドの処理スクリプト)の読み込み
 const api = require('./server/routes/api');
+const sys = require('./server/routes/sys');
+const info = require('./server/routes/info');
+const empId = require('./server/routes/empId');
+const empAdd = require('./server/routes/empAdd');
 
 // expressの初期化
 const app = express();
@@ -15,6 +19,10 @@ app.use(express.static(path.join(__dirname, 'dist/')));
 
 // /apiでアクセスしたときはapi.jsを表示
 app.use('/api', api);
+app.use('/sys', sys);
+app.use('/info', info);
+app.use('/empId', empId);
+app.use('/empAdd', empAdd);
 
 // 任意のURLでアクセスしたときはdist/index.html(Angularのindex.html)を表示
 app.get('*', (req, res) => {

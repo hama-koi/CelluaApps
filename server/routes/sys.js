@@ -1,9 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const user = require('../models/api')
+const info = require('../models/info')
+// スキーマを定義
+// var Schema   = mongoose.Schema;
+// var UserSchema = new Schema({
+//   message: String
+// });
+// var strage = {
+//   message: 'デフォルトメッセージ'
+// };
+//const strages = [strage];
+//mongoose.model('Info', UserSchema);
 
 // MongoDBに接続
+// スキーマ定義をモデルで行う為↑のロジック修正
 mongoose.connect('mongodb://localhost/test',
 function(err) {
   if (err) {
@@ -13,21 +24,16 @@ function(err) {
   }
 }
 );
-var User = mongoose.model('user');
-// router.get('/get', (req, res) => {
-//   res.header('Content-Type', 'text/plain;charset=utf-8');
-//   // res.json('レスポンス成功');
-// //  res.sta
-//   });
-//});
+var Info = mongoose.model('info');
+
 router.get('/',(req, res) => {
+ 
   // MongoDBからデータを取得
-  User.find({}, function(err, result) {
+  Info.find({}, function(err, result) {
     res.header('Content-Type', 'text/plain;charset=utf-8');
-    // res.json(result);
     res.json({
       status: 200,
-      response:'メッセージリストを返却',
+      response:'お知らせ一覧',
       messages: result
     });
 

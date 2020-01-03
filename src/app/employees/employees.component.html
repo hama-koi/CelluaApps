@@ -1,5 +1,72 @@
-<p>
-{{tenName}}
-{{tenAddress}}
-</p>
-
+<form
+  class="form-horizontal"
+  (ngSubmit)="onSubmit($event)"
+  #form1="ngForm"><!--{{this.alertDialogResult}}-->
+  <div class="form-group">
+    <label class="col-sm-2 control-label">first_name</label>
+    <div class="col-sm-5">
+      <input
+        type="text"
+        name="first_name"
+        required
+        class="form-control"
+        [(ngModel)]="employee.first_name"
+        #name="ngModel">
+       </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">last_name</label>
+    <div class="col-sm-5">
+      <input
+        type="text"
+        class="form-control"
+        name="last_name"
+        [(ngModel)]="employee.last_name"
+        #name="ngModel">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">age</label>
+    <div class="col-sm-5">
+      <input
+        type="text"
+        class="form-control"
+        name="age"
+        required
+        [(ngModel)]="employee.age"
+        #name="ngModel">
+    </div>
+  </div>
+  <div class="form-group">
+   <label class="col-sm-2 control-label">sex</label>
+   <div class="col-sm-5">
+     <input
+       type="text"
+       class="form-control"
+       name="sex"
+       required
+       [(ngModel)]="employee.sex"
+       #name="ngModel">
+   </div>
+ </div>
+ <div class="form-group">
+  <label class="col-sm-2 control-label">adress</label>
+  <div class="col-sm-5">
+    <input
+      type="text"
+      class="form-control"
+      name="adress"
+      required
+      [(ngModel)]="employee.adress"
+      #name="ngModel">
+  </div>
+</div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-5">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!form1.form.valid">新規登録</button>
+    </div>
+  </div>
+</form>

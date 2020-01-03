@@ -7,6 +7,8 @@ import { HttpClientService } from '../service/common.service';
   styleUrls: ['./itiran.component.css']
 })
 export class ItiranComponent implements OnInit {
+
+  constructor(private httpClientService: HttpClientService) {}
   /**
    * バックエンドから返却されたレスポンスをセットするプロパティ
    *
@@ -45,9 +47,8 @@ export class ItiranComponent implements OnInit {
    * @ memberof HttpClientComponent
    */
   // tslint:disable-next-line:no-inferrable-types
-  public message: string = 'miss!!!';
-
-  constructor(private httpClientService: HttpClientService) {}
+ // public message: string = 'miss!!!';
+  displayedColumns: string[] = ['No', 'first_name', 'last_name', 'age', 'sex', 'adress'];
 
   ngOnInit() {
     // ------
