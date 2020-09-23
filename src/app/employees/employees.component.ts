@@ -44,7 +44,8 @@ export class EmployeesComponent implements OnInit {
           this.httpClientService
           .setUser(JSON.stringify(this.employee))
           .then(response => {
-         // this.usresInfo = response;
+
+          console.log( response);
          // this.usresMaxId = this.usresInfo.messages;
         })
         .catch(error => console.log(error));

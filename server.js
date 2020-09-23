@@ -2,7 +2,7 @@
 const express = require('express');
 const path = require('path');
 const http = require('http');
-
+const bodyParser = require('body-parser')
 // api.js(サーバサイドの処理スクリプト)の読み込み
 const api = require('./server/routes/api');
 const sys = require('./server/routes/sys');
@@ -12,7 +12,8 @@ const empAdd = require('./server/routes/empAdd');
 
 // expressの初期化
 const app = express();
-
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 // 静的ファイルパスの設定
 // ビルド後のAngularのパスを設定する
 app.use(express.static(path.join(__dirname, 'dist/')));

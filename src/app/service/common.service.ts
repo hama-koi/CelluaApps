@@ -92,11 +92,13 @@ public getEmpId(): Promise<any[]> {
 * 従業員登録
 */
 public setUser(addUser: any): Promise<any[]> {
-  console.log(addUser);
-  this.httpOptions.body = addUser;
-  return this.http.get(this.host + '/empAdd', this.httpOptions)
+  console.log('従業員情報は：' + addUser);
+  this.httpOptions.body = JSON.parse(addUser);
+
+  return this.http.post(this.host + '/empAdd', this.httpOptions)
   .toPromise()
   .then((res) => {
+    console.log('登録後からのリザルトは' + res);
     const response: any = res;
     return response;
   })
